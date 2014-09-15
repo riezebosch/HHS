@@ -17,19 +17,23 @@ namespace HHS.Tests
             {
                 new List<string>
                 {
+                    "a", "b", "c"
                 },
                 new List<string>
                 {
+                    "a", "b", "c"
                 },
                 new List<string>
                 {
+                    "c", "b", "a"
                 },
-                new List<string>
-                {
-                },
+  
             };
 
             List<string> result = ProductBacklogHelper.Combine(items);
+            Assert.AreEqual("a", result[0]);
+            Assert.AreEqual("b", result[1]);
+            Assert.AreEqual("c", result[2]);
         }
     }
 }

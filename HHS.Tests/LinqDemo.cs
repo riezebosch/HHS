@@ -161,6 +161,30 @@ namespace HHS.Tests
                 "Assen", "Amstelveen", "Alphen"
             };
 
+            var result = plaatsnamen
+                .Where(x => x.Length < 8)
+                .OrderBy(x => x.Length)
+                .ThenBy(x => x);
+
+
+            Console.WriteLine(string.Join(", ", result));
+
+            var query = from x in plaatsnamen
+                        where x.Length < 8
+                        orderby x.Length, x
+                        select x;
+
+            var query2 = from x in plaatsnamen
+                         where x.Length < 8
+                         orderby x.Length, x
+                         select new { Lengte = x.Length, Naam = x };
+
+            foreach (var item in query2)
+            {
+                //item.L
+            }
+
+            Console.WriteLine(string.Join(", ", query));
 
 
             /* Opdracht 1;
