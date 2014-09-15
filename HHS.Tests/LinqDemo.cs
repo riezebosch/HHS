@@ -151,6 +151,10 @@ namespace HHS.Tests
         [TestMethod]
         public void LinqOefening()
         {
+            // selecteer plaatsnamen korter dan 8 karakters
+            // gesorteerd op lengte
+            // bij gelijke lengte gesorteerd op alfabet.
+
             var plaatsnamen = new List<string>
             { 
                 "Amsterdam", "Arnhem", "Amersfoort",
